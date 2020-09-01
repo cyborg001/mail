@@ -1,0 +1,24 @@
+textarea {
+    min-height: 400px;
+}
+.div_email{
+  border: 5px solid black;
+  padding-left:4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+.col-8 {
+}
+.span_sender {
+  font-weight: bold;
+}
+.span_subject {
+
+}
+.span_timestamp {
+  color:gray;
+}
+.col-4{
+  text-align: right;
+}
