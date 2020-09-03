@@ -1,17 +1,18 @@
 textarea {
     min-height: 400px;
 }
-.div_email{
-  border: 5px solid black;
-  padding-left:4px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.bordeado{
+  border: 2px solid black;
+  padding-left: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
   font-size: 20px;
 }
 .col-8 {
 }
 .span_sender {
   font-weight: bold;
+  padding-left: 30px;
 }
 .span_subject {
 
@@ -21,4 +22,16 @@ textarea {
 }
 .col-4{
   text-align: right;
+}
+.reading {
+  font-weight: bold;
+}
+.class_archivar {
+  z-index: 2;
+  position:relative;
+  left:25px;
+  top:18px;
+}
+#archivar {
+  padding-left:20px;
 }
