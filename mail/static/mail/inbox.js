@@ -44,7 +44,12 @@ function compose_email() {
 }
 
 function load_mailbox(mailbox) {
-  document.querySelector('#archivar').style.display = 'block';
+  if (mailbox == 'inbox' | mailbox == 'archive'){
+    document.querySelector('#archivar').style.display = 'block';
+  }else{
+    document.querySelector('#archivar').style.display = 'none';
+  }
+
   document.querySelector('#user').style.display= 'none';
   document.querySelector('#ruser').style.display= 'block';
   const user = document.querySelector('#ruser').innerHTML;
@@ -75,17 +80,22 @@ function load_mailbox(mailbox) {
           }
           const element = document.createElement('div');
           chequeado = '';
-          if(e.archived==true){
-            chequeado = `<input type="checkbox"  style='{margin-top:13px; margin-right:5px;}'
-            id='${e.id}' class='class_archivar'  value="read" checked>`;
-          }else{
-            chequeado = `<input type="checkbox"  style='{margin-top:13px; margin-right:5px;}'
-            id='${e.id}' class='class_archivar'  value="read" >`;
+          if(mailbox!='sent'){
+            if(e.archived==true){
+              chequeado = `<input type="checkbox"  style='{margin-top:13px; margin-right:5px;}'
+              id='${e.id}' class='class_archivar'  value="read" checked>`;
+            }else{
+              chequeado = `<input type="checkbox"  style='{margin-top:13px; margin-right:5px;}'
+              id='${e.id}' class='class_archivar'  value="read" >`;
+            }
           }
+
+
+
           element.id=`mail_${e.id}`;
           element.className ='div_email row';
           element.innerHTML = `
-                                '${chequeado}'
+                                ${chequeado}
 
                               <div class='col-11 bordeado' id='id_${e.id}'>
                                 <div class='row'>
@@ -140,7 +150,7 @@ function load_mailbox(mailbox) {
           //aqui finaliza el algoritmo para archivar/desarchivar correos
 
           //aqui va la parte de hacer click en los correos
-          if (mailbox == 'inbox'){
+          // if (mailbox == 'inbox'){
 
             document.querySelector(`#id_${e.id}`).onclick = ()=>{
 
@@ -216,7 +226,7 @@ function load_mailbox(mailbox) {
 
               });
             }
-         }
+         // }
           //aqui termina la parte de hacer click en los correos
 
 
